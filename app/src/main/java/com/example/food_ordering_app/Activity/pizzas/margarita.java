@@ -1,25 +1,33 @@
-package com.example.food_ordering_app.Activity;
+package com.example.food_ordering_app.Activity.pizzas;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.food_ordering_app.Activity.MainActivity;
 import com.example.food_ordering_app.R;
+import com.example.food_ordering_app.Activity.*;
 
-public class allpizzas extends AppCompatActivity {
+public class margarita extends AppCompatActivity {
+    Button order;
     ImageView back, home, cart, support, about;
+    @SuppressLint({"MissingInflatedId", "CutPasteId"})
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pizza);
-        back = (ImageButton) findViewById(R.id.imageButton2);
+        setContentView(R.layout.margarita);
+        order = (Button) findViewById(R.id.button2);
+        back = (ImageButton) findViewById(R.id.imageButton);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent back = new Intent(allpizzas.this, MainActivity.class);
+                Intent back = new Intent(margarita.this, veg.class);
                 startActivity(back);
             }
         });
@@ -27,7 +35,7 @@ public class allpizzas extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent home = new Intent(allpizzas.this, MainActivity.class);
+                Intent home = new Intent(margarita.this, com.example.food_ordering_app.Activity.MainActivity.class);
                 startActivity(home);
             }
         });
@@ -35,7 +43,7 @@ public class allpizzas extends AppCompatActivity {
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent cart = new Intent(allpizzas.this, cart.class);
+                Intent cart = new Intent(margarita.this, com.example.food_ordering_app.Activity.cart.class);
                 startActivity(cart);
             }
         });
@@ -43,7 +51,7 @@ public class allpizzas extends AppCompatActivity {
         support.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent support = new Intent(allpizzas.this, support.class);
+                Intent support = new Intent(margarita.this, com.example.food_ordering_app.Activity.support.class);
                 startActivity(support);
             }
         });
@@ -51,9 +59,11 @@ public class allpizzas extends AppCompatActivity {
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent about = new Intent(allpizzas.this, about.class);
+                Intent about = new Intent(margarita.this, com.example.food_ordering_app.Activity.about.class);
                 startActivity(about);
             }
         });
+
     }
+
 }

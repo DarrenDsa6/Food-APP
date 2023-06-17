@@ -18,13 +18,45 @@ import org.w3c.dom.Text;
 import java.util.function.IntToDoubleFunction;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView veg, nonveg, drinks;
+    ImageView veg, nonveg, drinks, home, cart, support, about;
     TextView order;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        home = (ImageView)findViewById(R.id.imageView8);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent home = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(home);
+            }
+        });
+        cart = (ImageView)findViewById(R.id.imageView9);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cart = new Intent(MainActivity.this, cart.class);
+                startActivity(cart);
+            }
+        });
+        support  = (ImageView)findViewById(R.id.imageView9);
+        support.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent support = new Intent(MainActivity.this, support.class);
+                startActivity(support);
+            }
+        });
+        about  = (ImageView)findViewById(R.id.imageView10);
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent about = new Intent(MainActivity.this, about.class);
+                startActivity(about);
+            }
+        });
         nonveg = (ImageView) findViewById(R.id.imageView7);
         nonveg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,8 +82,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(it);
             }
         });
-        nonveg = (ImageView) findViewById(R.id.imageView7);
-
         drinks = (ImageView)findViewById(R.id.imageView6);
+        drinks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent drinks = new Intent(MainActivity.this, drinks.class);
+                startActivity(drinks);
+            }
+        });
     }
 }

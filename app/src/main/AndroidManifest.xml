@@ -23,9 +23,8 @@
         </activity>
         <activity android:name=".Activity.veg"
             android:exported="false"/>
-        <activity android:name=".Activity.margarita"
-            />
         <activity android:name=".Activity.allpizzas"/>
+        <activity android:name=".Activity.pizzas.margarita"/>
 
     </application>
 
