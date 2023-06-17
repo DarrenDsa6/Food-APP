@@ -122,7 +122,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
-                    android:text="You have 2 FREE delivery coupons!"
+                    android:text="Order Delicious Pizzas Now!"
                     android:textColor="#B6AFAF"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"

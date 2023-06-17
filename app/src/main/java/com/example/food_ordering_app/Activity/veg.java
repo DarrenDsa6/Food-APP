@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.food_ordering_app.R;
@@ -35,7 +34,7 @@ public class veg extends AppCompatActivity {
                 startActivity(back);
             }
         });
-        margarita = (ImageView) findViewById(R.id.imageView4);
+        margarita = (ImageView) findViewById(R.id.margaritaimage);
         margarita.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
