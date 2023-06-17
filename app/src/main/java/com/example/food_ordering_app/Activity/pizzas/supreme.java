@@ -1,4 +1,16 @@
 package com.example.food_ordering_app.Activity.pizzas;
 
-public class supreme {
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.food_ordering_app.R;
+
+public class supreme extends AppCompatActivity {
+
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.supreme);
+
+    }
 }

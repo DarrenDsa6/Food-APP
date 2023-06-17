@@ -12,6 +12,7 @@ import com.example.food_ordering_app.R;
 
 public class allpizzas extends AppCompatActivity {
     ImageView back, home, cart, support, about;
+    ImageView farmhouse, peppypaneer, mexican, margarita, fiesta, supreme, barbeque, pepperoni;
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pizza);
@@ -53,6 +54,70 @@ public class allpizzas extends AppCompatActivity {
             public void onClick(View v) {
                 Intent about = new Intent(allpizzas.this, about.class);
                 startActivity(about);
+            }
+        });
+        pepperoni = (ImageView) findViewById(R.id.pepperoniimage);
+        pepperoni.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(allpizzas.this, com.example.food_ordering_app.Activity.pizzas.pepperoni.class);
+                startActivity(it);
+            }
+        });
+        barbeque = (ImageView) findViewById(R.id.pepperonionimage);
+        barbeque.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(allpizzas.this, com.example.food_ordering_app.Activity.pizzas.barbeque.class);
+                startActivity(it);
+            }
+        });
+        supreme = (ImageView) findViewById(R.id.nonvegsupremeimage);
+        supreme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(allpizzas.this, com.example.food_ordering_app.Activity.pizzas.supreme.class);
+                startActivity(it);
+            }
+        });
+        fiesta = (ImageView) findViewById(R.id.fiestaimage);
+        fiesta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(allpizzas.this, com.example.food_ordering_app.Activity.pizzas.fiesta.class);
+                startActivity(it);
+            }
+        });
+        margarita = (ImageView) findViewById(R.id.margaritaimage);
+        margarita.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(allpizzas.this, com.example.food_ordering_app.Activity.pizzas.margarita.class);
+                startActivity(it);
+            }
+        });
+        peppypaneer = (ImageView) findViewById(R.id.paneerimage);
+        peppypaneer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(allpizzas.this, com.example.food_ordering_app.Activity.pizzas.peppypaneer.class);
+                startActivity(it);
+            }
+        });
+        mexican = (ImageView) findViewById(R.id.mexicangreenimage);
+        mexican.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(allpizzas.this, com.example.food_ordering_app.Activity.pizzas.mexican.class);
+                startActivity(it);
+            }
+        });
+        farmhouse = (ImageView) findViewById(R.id.farmhouseimage);
+        farmhouse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(allpizzas.this, com.example.food_ordering_app.Activity.pizzas.farmhouse.class);
+                startActivity(it);
             }
         });
     }

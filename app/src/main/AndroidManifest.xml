@@ -25,6 +25,13 @@
             android:exported="false"/>
         <activity android:name=".Activity.allpizzas"/>
         <activity android:name=".Activity.pizzas.margarita"/>
+        <activity android:name=".Activity.pizzas.farmhouse"/>
+        <activity android:name=".Activity.pizzas.pepperoni"/>
+        <activity android:name=".Activity.pizzas.peppypaneer"/>
+        <activity android:name=".Activity.pizzas.barbeque"/>
+        <activity android:name=".Activity.pizzas.mexican"/>
+        <activity android:name=".Activity.pizzas.fiesta"/>
+        <activity android:name=".Activity.pizzas.supreme"/>
 
     </application>
 

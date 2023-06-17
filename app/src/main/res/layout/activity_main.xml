@@ -43,7 +43,7 @@
                     android:layout_marginEnd="163dp"
                     android:layout_marginBottom="8dp"
                     android:text="Deliver To"
-                    android:textColor="#272727"
+                    android:textColor="#121212"
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toTopOf="@+id/textView2"
