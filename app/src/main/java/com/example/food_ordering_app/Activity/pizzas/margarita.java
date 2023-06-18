@@ -23,6 +23,15 @@ public class margarita extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.margarita);
         order = (Button) findViewById(R.id.button2);
+        order.setOnClickListener(new View.OnClickListener() {
+            final String str = "Margarita".toString();
+            @Override
+            public void onClick(View v) {
+                Intent order = new Intent(margarita.this, orders.class);
+                getIntent().putExtra("message_key", str);
+                startActivity(order);
+            }
+        });
         back = (ImageButton) findViewById(R.id.imageButton);
         back.setOnClickListener(new View.OnClickListener() {
             @Override

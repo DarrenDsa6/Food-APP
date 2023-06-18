@@ -2,29 +2,39 @@ package com.example.food_ordering_app.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.content.ClipData;
 import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.SearchEvent;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.food_ordering_app.R;
 
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.IntToDoubleFunction;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView veg, nonveg, drinks, home, cart, support, about;
+    ImageView veg, nonveg, drinks, home, cart, support, about, searchview;
     TextView order;
-
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         home = (ImageView)findViewById(R.id.imageView8);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,5 +100,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(drinks);
             }
         });
+        searchview = (ImageView) findViewById(R.id.searchview1);
+        searchview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent search = new Intent(MainActivity.this, allpizzas.class);
+                startActivity(search);
+            }
+        });
+
+
     }
+
 }
