@@ -1,115 +1,44 @@
-package com.example.food_ordering_app.Activity;
+package com.gtappdevelopers.kotlingfgproject;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.content.ClipData;
-import android.content.Intent;
-import android.media.Image;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.SearchEvent;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.SearchView;
-import android.widget.TextView;
-
+import com.example.food_ordering_app.Activity.MainActivity2;
 import com.example.food_ordering_app.R;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.IntToDoubleFunction;
-
 public class MainActivity extends AppCompatActivity {
-    ImageView veg, nonveg, drinks, home, cart, support, about, searchview;
-    TextView order;
-    @SuppressLint("MissingInflatedId")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        home = (ImageView)findViewById(R.id.imageView8);
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent home = new Intent(MainActivity.this, MainActivity.class);
-                startActivity(home);
-            }
-        });
-        cart = (ImageView)findViewById(R.id.imageView9);
-        cart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent cart = new Intent(MainActivity.this, cart.class);
-                startActivity(cart);
-            }
-        });
-        support  = (ImageView)findViewById(R.id.imageView9);
-        support.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent support = new Intent(MainActivity.this, support.class);
-                startActivity(support);
-            }
-        });
-        about  = (ImageView)findViewById(R.id.imageView10);
-        about.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent about = new Intent(MainActivity.this, about.class);
-                startActivity(about);
-            }
-        });
-        nonveg = (ImageView) findViewById(R.id.imageView7);
-        nonveg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent nonveg = new Intent(MainActivity.this, nonveg.class);
-                startActivity(nonveg);
-            }
-        });
-        order = (TextView)findViewById(R.id.textView4);
-        order.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent order = new Intent(MainActivity.this, allpizzas.class);
-                startActivity(order);
-            }
-        });
+        // on below line we are configuring our window to full screen
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        veg = (ImageView) findViewById(R.id.imageView5);
-        veg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it = new Intent(MainActivity.this, com.example.food_ordering_app.Activity.veg.class);
-                startActivity(it);
-            }
-        });
-        drinks = (ImageView)findViewById(R.id.imageView6);
-        drinks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent drinks = new Intent(MainActivity.this, drinks.class);
-                startActivity(drinks);
-            }
-        });
-        searchview = (ImageView) findViewById(R.id.searchview1);
-        searchview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent search = new Intent(MainActivity.this, allpizzas.class);
-                startActivity(search);
-            }
-        });
+        setContentView(R.layout.splashscreen);
 
+        // on below line we are calling handler to run a task
+        // for specific time interval
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // on below line we are
+                // creating a new intent
+                Intent i = new Intent(MainActivity.this, MainActivity2.class);
+
+                // on below line we are
+                // starting a new activity.
+                startActivity(i);
+
+                // on the below line we are finishing
+                // our current activity.
+                finish();
+            }
+        }, 2000);
 
     }
-
 }
