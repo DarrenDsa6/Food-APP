@@ -12,19 +12,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.food_ordering_app.R;
 import com.example.food_ordering_app.Activity.*;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class margarita extends AppCompatActivity {
     Button order;
+    private DatabaseReference databaseReference;
     ImageView back, home, cart, support, about;
     @SuppressLint({"MissingInflatedId", "CutPasteId"})
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.margarita);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
         order = (Button) findViewById(R.id.button2);
         order.setOnClickListener(new View.OnClickListener() {
-            final String str = "Margarita".toString();
             @Override
             public void onClick(View v) {
+                String pizza = "Margarita";
+                databaseReference.setValue(pizza);
                 Intent order = new Intent(margarita.this, orders.class);
                 startActivity(order);
 
