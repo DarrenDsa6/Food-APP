@@ -28,13 +28,13 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="24dp">
 
-                <ImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/imageView2"
                     android:layout_width="363dp"
                     android:layout_height="100dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@drawable/logo" />
+                    app:srcCompat="@drawable/logo" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -57,11 +57,12 @@
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
                 android:background="@drawable/button_background"
+                android:backgroundTint="#72353333"
                 android:drawablePadding="10dp"
                 android:gravity="center"
                 android:text="Iconic Italian cuisine now available at your doorstep!!!"
                 android:textAlignment="center"
-                android:textColor="#504C4C"
+                android:textColor="#FDFCFC"
                 android:textSize="24sp"
                 android:textStyle="bold|italic"
                 tools:ignore="TextContrastCheck" />
@@ -162,14 +163,15 @@
                         android:layout_height="match_parent"
                         android:layout_margin="8dp"
                         android:layout_weight="0.5"
-                        android:background="@drawable/category_background">
+                        android:background="@drawable/category_background"
+                        android:backgroundTint="#2E2D2B">
 
                         <TextView
                             android:id="@+id/textView5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Veg Pizza"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="@+id/imageView5"
@@ -192,14 +194,15 @@
                         android:layout_height="match_parent"
                         android:layout_margin="8dp"
                         android:layout_weight="0.5"
-                        android:background="@drawable/category_background">
+                        android:background="@drawable/category_background"
+                        android:backgroundTint="#2E2D2B">
 
                         <TextView
                             android:id="@+id/textView6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Drinks"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="@+id/imageView6"
@@ -222,14 +225,15 @@
                         android:layout_height="match_parent"
                         android:layout_margin="8dp"
                         android:layout_weight="0.5"
-                        android:background="@drawable/category_background">
+                        android:background="@drawable/category_background"
+                        android:backgroundTint="#2E2D2B">
 
                         <TextView
                             android:id="@+id/textView7"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Non Veg Pizza"
-                            android:textColor="@color/black"
+                            android:textColor="@color/white"
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="@+id/imageView7"
@@ -265,6 +269,8 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_gravity="bottom"
+        android:background="#393838"
+        app:backgroundTint="#393838"
         app:layout_constraintBottom_toBottomOf="@+id/scrollView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -280,6 +286,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.25"
+                android:background="#393838"
                 android:orientation="vertical">
 
                 <ImageView
@@ -304,6 +311,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.25"
+                android:background="#393838"
                 android:orientation="vertical">
 
                 <ImageView
@@ -328,6 +336,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.25"
+                android:background="#393838"
                 android:orientation="vertical">
 
                 <ImageView
@@ -352,6 +361,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="0.25"
+                android:background="#393838"
                 android:orientation="vertical">
 
                 <ImageView

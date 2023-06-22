@@ -15,8 +15,6 @@ public class orders extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.orders);
         recievemessage = (TextView)findViewById(R.id.textView18);
-        Intent intent = getIntent();
-        String str = intent.getStringExtra("message_key");
-        recievemessage.setText(str);
+
     }
 }

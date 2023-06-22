@@ -2,7 +2,6 @@ package com.example.food_ordering_app.Activity.pizzas;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,7 +10,6 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.food_ordering_app.Activity.MainActivity;
 import com.example.food_ordering_app.R;
 import com.example.food_ordering_app.Activity.*;
 
@@ -28,8 +26,8 @@ public class margarita extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent order = new Intent(margarita.this, orders.class);
-                getIntent().putExtra("message_key", str);
                 startActivity(order);
+
             }
         });
         back = (ImageButton) findViewById(R.id.imageButton);
