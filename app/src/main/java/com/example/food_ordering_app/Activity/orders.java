@@ -23,22 +23,5 @@ public class orders extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.orders);
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-        recievemessage = (TextView)findViewById(R.id.textView26);
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
-                    String pizza = snapshot.getValue().toString();
-                    recievemessage.setText(pizza);
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
     }
 }

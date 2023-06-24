@@ -13,47 +13,48 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.food_ordering_app.Activity.pizza;
-import com.example.food_ordering_app.Model.pizzamodel;
+import com.example.food_ordering_app.Activity.vegpizza;
+import com.example.food_ordering_app.Model.vegmodel;
 import com.example.food_ordering_app.R;
 
 import java.util.ArrayList;
 
-public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHolder> {
-    ArrayList<pizzamodel> items;
+public class veglistAdapter extends RecyclerView.Adapter<veglistAdapter.ViewHolder> {
+    ArrayList<vegmodel> items;
     Context context;
 
-    public FoodListAdapter(Context context, ArrayList<pizzamodel> items) {
+    public veglistAdapter(ArrayList<vegmodel> items, Context context) {
         this.items = items;
         this.context = context;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.margarita,parent,false);
+    public veglistAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.margarita, parent, false);
         context = parent.getContext();
         return new ViewHolder(inflate);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        pizzamodel pizzamodel = items.get(position);
-        holder.pizza.setImageResource(pizzamodel.getId());
-        holder.pizzaname.setText(pizzamodel.getPizza());
-        holder.price.setText(pizzamodel.getPrice());
-
+    public void onBindViewHolder(@NonNull veglistAdapter.ViewHolder holder, int position) {
+        vegmodel vegmodel = items.get(position);
+        holder.image.setImageResource(vegmodel.getId());
+        holder.name.setText(vegmodel.getPizza());
+        holder.price.setText(vegmodel.getPrice());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent =  new Intent(context, pizza.class);
+                Intent intent = new Intent(context, pizza.class);
                 Bundle bundle = new Bundle();
-                bundle.putInt("pizza", pizzamodel.getId());
-                bundle.putString("pizzaname", pizzamodel.getPizza());
-                bundle.putString("pizzaprice", pizzamodel.getPrice());
+                bundle.putInt("pizza", vegmodel.getId());
+                bundle.putString("pizzaname", vegmodel.getPizza());
+                bundle.putString("pizzaprice", vegmodel.getPrice());
                 intent.putExtras(bundle);
                 context.startActivity(intent, bundle);
             }
         });
+
     }
 
     @Override
@@ -62,14 +63,13 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        ImageView pizza;
-        TextView pizzaname;
-        TextView price;
-
+    ImageView image;
+    TextView name;
+    TextView price;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            pizza = itemView.findViewById(R.id.imageView);
-            pizzaname = itemView.findViewById(R.id.textView13);
+            image = itemView.findViewById(R.id.imageView);
+            name = itemView.findViewById(R.id.textView13);
             price = itemView.findViewById(R.id.textView14);
         }
     }

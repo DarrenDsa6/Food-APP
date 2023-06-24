@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         nonveg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nonveg = new Intent(MainActivity.this, nonveg.class);
+                Intent nonveg = new Intent(MainActivity.this, nonvegpizza.class);
                 startActivity(nonveg);
             }
         });
@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
         veg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent it = new Intent(MainActivity.this, com.example.food_ordering_app.Activity.veg.class);
+                Intent it = new Intent(MainActivity.this, vegpizza.class);
                 startActivity(it);
             }
         });
