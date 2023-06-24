@@ -11,8 +11,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.food_ordering_app.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class pizza extends AppCompatActivity {
+    DatabaseReference databaseReference;
     ImageView imageView;
     TextView name;
     TextView price;
@@ -22,6 +25,7 @@ public class pizza extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.indi_pizza);
+        databaseReference = FirebaseDatabase.getInstance().getReference();
         imageView = findViewById(R.id.imageView12);
         name = findViewById(R.id.textView12);
         price = findViewById(R.id.textView16);
@@ -37,6 +41,8 @@ public class pizza extends AppCompatActivity {
         order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String Pizza = name.toString();
+                databaseReference.setValue(Pizza);
                 Intent intent1 = new Intent(pizza.this, orders.class);
                 startActivity(intent1);
             }
