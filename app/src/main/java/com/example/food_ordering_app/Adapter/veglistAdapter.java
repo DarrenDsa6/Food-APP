@@ -54,7 +54,6 @@ public class veglistAdapter extends RecyclerView.Adapter<veglistAdapter.ViewHold
                 context.startActivity(intent, bundle);
             }
         });
-
     }
 
     @Override

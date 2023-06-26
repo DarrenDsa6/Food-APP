@@ -13,36 +13,36 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="74dp"
+                android:gravity="center"
+                android:text="Your orders are displayed here"
+                android:textAlignment="center"
+                android:textColor="#E91E63"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/border_background"
+                android:gravity="center"
+                android:text="No orders yet..."
+                android:textColor="#4CAF50"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/reyclerview4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
     </ScrollView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="match_parent"
-            android:layout_height="74dp"
-            android:gravity="center"
-            android:text="Your orders are displayed here"
-            android:textAlignment="center"
-            android:textColor="#E91E63"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView26"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@drawable/border_background"
-            android:gravity="center"
-            android:text="No orders yet..."
-            android:textColor="#4CAF50"
-            android:textSize="20sp"
-            android:textStyle="bold|italic" />
-
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,7 +43,7 @@ public class pizza extends AppCompatActivity {
             public void onClick(View v) {
                 String Pizza = name.toString();
                 databaseReference.setValue(Pizza);
-                Intent intent1 = new Intent(pizza.this, orders.class);
+                Intent intent1 = new Intent(pizza.this, orders_placed.class);
                 startActivity(intent1);
             }
         });
