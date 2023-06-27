@@ -1,19 +1,7 @@
 package com.example.food_ordering_app.Activity;
 
 import android.annotation.SuppressLint;
-import android.app.SearchManager;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,7 +20,7 @@ public class allpizzas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pizza);
+        setContentView(R.layout.activity_pizza);
         recyclerView = findViewById(R.id.recyclerview);
         ArrayList<pizzamodel> pizzamodels = new ArrayList<>();
         pizzamodels.add(new pizzamodel(R.drawable.margarita, "Margarita", "125"));

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.food_ordering_app.Model.ordersmodel;
 import com.example.food_ordering_app.R;
 
+import java.text.BreakIterator;
 import java.util.ArrayList;
 
 public class orderlistAdapter extends RecyclerView.Adapter<orderlistAdapter.ViewHolder> {
@@ -35,7 +36,7 @@ public class orderlistAdapter extends RecyclerView.Adapter<orderlistAdapter.View
     @Override
     public void onBindViewHolder(@NonNull orderlistAdapter.ViewHolder holder, int position) {
         ordersmodel ordersmodel = items.get(position);
-        holder.image.setImageResource(ordersmodel.getId());
+        holder.pizzaprice.setText(ordersmodel.getPrice());
         holder.pizzaname.setText(ordersmodel.getPizzaname());
     }
 
@@ -45,13 +46,14 @@ public class orderlistAdapter extends RecyclerView.Adapter<orderlistAdapter.View
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
+        TextView  pizzaprice;
         ImageView image;
         TextView pizzaname;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            image = itemView.findViewById(R.id.imageView);
-            pizzaname = itemView.findViewById(R.id.textView13);
+            pizzaprice = itemView.findViewById(R.id.textView13);
+            pizzaname = itemView.findViewById(R.id.textView20);
         }
     }
 }

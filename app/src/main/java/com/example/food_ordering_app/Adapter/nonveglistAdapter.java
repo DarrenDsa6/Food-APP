@@ -32,7 +32,7 @@ public class nonveglistAdapter extends RecyclerView.Adapter<nonveglistAdapter.Vi
     @NonNull
     @Override
     public nonveglistAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.margarita, parent, false);
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_nonveg, parent, false);
         context = parent.getContext();
         return new ViewHolder(inflate);
     }
@@ -43,13 +43,18 @@ public class nonveglistAdapter extends RecyclerView.Adapter<nonveglistAdapter.Vi
         holder.image.setImageResource(nonvegmodel.getId());
         holder.name.setText(nonvegmodel.getPizza());
         holder.price.setText(nonvegmodel.getPrice());
-        Intent intent = new Intent(context, pizza.class);
-        Bundle bundle = new Bundle();
-        bundle.putInt("pizza", nonvegmodel.getId());
-        bundle.putString("pizzaname", nonvegmodel.getPizza());
-        bundle.putString("pizzaprice", nonvegmodel.getPrice());
-        intent.putExtras(bundle);
-        context.startActivity(intent, bundle);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, pizza.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("pizza", nonvegmodel.getId());
+                bundle.putString("pizzaname", nonvegmodel.getPizza());
+                bundle.putString("pizzaprice", nonvegmodel.getPrice());
+                intent.putExtras(bundle);
+                context.startActivity(intent, bundle);
+            }
+        });
     }
 
     @Override

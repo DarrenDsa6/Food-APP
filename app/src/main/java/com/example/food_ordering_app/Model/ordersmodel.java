@@ -1,21 +1,7 @@
 package com.example.food_ordering_app.Model;
 
 public class ordersmodel {
-    int id;
-    String pizzaname;
-
-    public ordersmodel(int id, String pizzaname) {
-        this.id = id;
-        this.pizzaname = pizzaname;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    String pizzaname, price;
 
     public String getPizzaname() {
         return pizzaname;
@@ -23,5 +9,18 @@ public class ordersmodel {
 
     public void setPizzaname(String pizzaname) {
         this.pizzaname = pizzaname;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public ordersmodel(String pizzaname, String price) {
+        this.pizzaname = pizzaname;
+        this.price = price;
     }
 }
