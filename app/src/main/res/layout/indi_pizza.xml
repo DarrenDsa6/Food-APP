@@ -16,7 +16,7 @@
             android:id="@+id/imageView12"
             android:layout_width="match_parent"
             android:layout_height="295dp"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/chickenfiest" />
 
         <LinearLayout

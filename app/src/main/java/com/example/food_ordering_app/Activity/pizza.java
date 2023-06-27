@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.food_ordering_app.Model.pizzamodel;
 import com.example.food_ordering_app.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -41,10 +42,16 @@ public class pizza extends AppCompatActivity {
         order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String Pizza = name.toString();
+                String Pizza = name.getText().toString();
                 databaseReference.setValue(Pizza);
                 Intent intent1 = new Intent(pizza.this, orders_placed.class);
                 startActivity(intent1);
+                Intent intent2 = new Intent(pizza.this, orders.class);
+                Bundle bundle1 = new Bundle();
+                bundle1.putInt("image", image);
+                bundle1.putString("name", string);
+                bundle1.putString("price", string1);
+                intent.putExtras(bundle);
             }
         });
     }

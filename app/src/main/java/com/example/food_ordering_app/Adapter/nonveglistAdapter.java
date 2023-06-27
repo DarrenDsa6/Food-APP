@@ -32,7 +32,7 @@ public class nonveglistAdapter extends RecyclerView.Adapter<nonveglistAdapter.Vi
     @NonNull
     @Override
     public nonveglistAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.margarita, parent, false);
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_nonveg, parent, false);
         context = parent.getContext();
         return new ViewHolder(inflate);
     }

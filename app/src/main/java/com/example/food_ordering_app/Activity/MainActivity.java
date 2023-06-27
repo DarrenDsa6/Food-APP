@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(cart);
             }
         });
-        support  = (ImageView)findViewById(R.id.imageView9);
+        support  = (ImageView)findViewById(R.id.imageView10);
         support.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

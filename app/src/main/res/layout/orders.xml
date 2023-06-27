@@ -26,21 +26,59 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textView26"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="120dp"
+                android:orientation="horizontal"
                 android:background="@drawable/border_background"
-                android:gravity="center"
-                android:text="No orders yet..."
-                android:textColor="#4CAF50"
-                android:textSize="20sp"
-                android:textStyle="bold|italic" />
+                android:paddingTop="10dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="200dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/margarita" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="@drawable/drawable_back"
+                    android:gravity="center"
+                    android:paddingRight="10dp"
+                    android:text="Margarita Pizza"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:text="125 Rs"
+                    android:textColor="@color/green"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/reyclerview4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                android:gravity="center"
+                android:text="Your Order is one the way..."
+                android:textColor="#E91E63"
+                android:textSize="20sp" />
 
         </LinearLayout>
     </ScrollView>
