@@ -2,6 +2,11 @@ package com.example.food_ordering_app.Model;
 
 public class ordersmodel {
     String pizzaname, price;
+    public ordersmodel(){}
+    public ordersmodel(String pizzaname, String price) {
+        this.pizzaname = pizzaname;
+        this.price = price;
+    }
 
     public String getPizzaname() {
         return pizzaname;
@@ -16,11 +21,6 @@ public class ordersmodel {
     }
 
     public void setPrice(String price) {
-        this.price = price;
-    }
-
-    public ordersmodel(String pizzaname, String price) {
-        this.pizzaname = pizzaname;
         this.price = price;
     }
 }
