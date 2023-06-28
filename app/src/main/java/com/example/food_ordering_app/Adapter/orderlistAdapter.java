@@ -27,13 +27,14 @@ public class orderlistAdapter extends RecyclerView.Adapter<orderlistAdapter.View
     @Override
     public orderlistAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.orderspec, parent, false);
+        context = parent.getContext();
         return new ViewHolder(inflate);
     }
 
     @Override
     public void onBindViewHolder(@NonNull orderlistAdapter.ViewHolder holder, int position) {
         ordersmodel ordersmodel = items.get(position);
-        holder.pizzaprice.setText(ordersmodel.getPrice());
+
         holder.pizzaname.setText(ordersmodel.getPizzaname());
     }
 

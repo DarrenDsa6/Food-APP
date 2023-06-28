@@ -2,6 +2,7 @@ package com.example.food_ordering_app.Activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,12 +23,20 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.StorageReference;
+
+import org.jetbrains.annotations.Nullable;
 
 public class pizza extends AppCompatActivity {
     FirebaseDatabase db;
     ActiviyIndiPizzaBinding binding;
     DatabaseReference databaseReference;
+    StorageReference storageReference;
     String pizza, price;
+    private int requestCode;
+    private int resultCode;
+    private Intent data;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -48,6 +57,7 @@ public class pizza extends AppCompatActivity {
                 Intent intent1 = new Intent(pizza.this, orders_placed.class);
                 pizza = binding.textView12.getText().toString();
                 price = binding.textView16.getText().toString();
+
                 if(!pizza.isEmpty()){
                     pizzaordermodel pizzaordermodel = new pizzaordermodel(pizza, price);
                     db = FirebaseDatabase.getInstance();
@@ -64,5 +74,6 @@ public class pizza extends AppCompatActivity {
         });
 
     }
+
 
 }

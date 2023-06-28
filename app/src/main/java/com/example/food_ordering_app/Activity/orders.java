@@ -4,8 +4,7 @@ import static android.widget.Toast.LENGTH_LONG;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.Toast;
+
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
