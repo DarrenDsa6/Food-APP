@@ -45,6 +45,7 @@ public class pizza extends AppCompatActivity {
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent1 = new Intent(pizza.this, orders_placed.class);
                 pizza = binding.textView12.getText().toString();
                 price = binding.textView16.getText().toString();
                 if(!pizza.isEmpty()){
@@ -58,6 +59,7 @@ public class pizza extends AppCompatActivity {
                         }
                     });
                 }
+                startActivity(intent1);
             }
         });
 

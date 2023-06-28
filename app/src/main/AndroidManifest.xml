@@ -23,6 +23,7 @@
             android:exported="false"/>
 
         <activity android:name=".Activity.nonvegpizza"/>
+        <activity android:name=".Activity.orders_placed"/>
         <activity android:name=".Activity.MainActivity2"
             android:exported="true">
             <intent-filter>

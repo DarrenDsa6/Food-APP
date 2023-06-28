@@ -34,13 +34,14 @@ public class orders extends AppCompatActivity {
         binding = ActivityOrdersBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         databaseReference = FirebaseDatabase.getInstance().getReference("Pizza Orders");
-        binding.reyclerview4.setHasFixedSize(true);
+        binding.reyclerview4.setHasFixedSize(false);
         binding.reyclerview4.setLayoutManager(new LinearLayoutManager(this));
 
         list = new ArrayList<>();
         orderlistAdapter = new orderlistAdapter(list, this);
         binding.reyclerview4.setAdapter(orderlistAdapter);
         databaseReference.addValueEventListener(new ValueEventListener() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot: snapshot.getChildren()){

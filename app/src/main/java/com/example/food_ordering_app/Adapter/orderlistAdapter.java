@@ -1,6 +1,8 @@
 package com.example.food_ordering_app.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.food_ordering_app.Activity.pizza;
 import com.example.food_ordering_app.Model.ordersmodel;
 import com.example.food_ordering_app.R;
 
@@ -38,6 +41,7 @@ public class orderlistAdapter extends RecyclerView.Adapter<orderlistAdapter.View
         ordersmodel ordersmodel = items.get(position);
         holder.pizzaprice.setText(ordersmodel.getPrice());
         holder.pizzaname.setText(ordersmodel.getPizzaname());
+
     }
 
     @Override
@@ -47,7 +51,6 @@ public class orderlistAdapter extends RecyclerView.Adapter<orderlistAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView  pizzaprice;
-        ImageView image;
         TextView pizzaname;
 
         public ViewHolder(@NonNull View itemView) {
