@@ -17,16 +17,20 @@ import com.example.food_ordering_app.Model.pizzamodel;
 import com.example.food_ordering_app.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.ViewHolder> {
-    ArrayList<pizzamodel> items;
-    Context context;
+    private ArrayList<pizzamodel> items;
+    private Context context;
 
     public FoodListAdapter(Context context, ArrayList<pizzamodel> items) {
         this.items = items;
         this.context = context;
     }
-
+    public void setFilteredList(ArrayList<pizzamodel> filteredList, Context context){
+        this.items = (ArrayList<pizzamodel>) filteredList;
+        notifyDataSetChanged();
+    }
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

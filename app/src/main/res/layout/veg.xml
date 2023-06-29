@@ -7,8 +7,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="409dp"
+        android:layout_height="660dp" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
@@ -21,7 +21,7 @@
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar3"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="60dp"
             android:layout_gravity="bottom"
             android:background="#393838"
             app:backgroundTint="#393838"
@@ -76,7 +76,7 @@
                         android:id="@+id/textView9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Orders"
+                        android:text="Cart"
                         android:textAlignment="center"
                         android:textColor="@color/green"
                         android:textStyle="bold" />

@@ -3,7 +3,12 @@ package com.example.food_ordering_app.Activity;
 import static android.widget.Toast.LENGTH_LONG;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.annotation.NonNull;
@@ -21,6 +26,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
@@ -30,7 +36,10 @@ public class orders extends AppCompatActivity {
     FirebaseDatabase db;
     orderlistAdapter orderlistAdapter;
     ArrayList<ordersmodel> list;
-
+    TextView Total;
+    Button Order;
+    String n;
+    int size;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -39,6 +48,7 @@ public class orders extends AppCompatActivity {
         setContentView(R.layout.activity_orders);
         db = FirebaseDatabase.getInstance();
         list = new ArrayList<>();
+        Total = findViewById(R.id.textView22);
         databaseReference = db.getReference("Pizza orders");
         recyclerView = findViewById(R.id.orderview);
         recyclerView.setHasFixedSize(true);
@@ -52,6 +62,9 @@ public class orders extends AppCompatActivity {
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
                     ordersmodel ordersmodel = postSnapshot.getValue(ordersmodel.class);
                     list.add(ordersmodel);
+                    size = list.size();
+                    n = Integer.toString(size*125);
+                    Total.setText("Order Total : "+n);
                 }
                 orderlistAdapter.notifyDataSetChanged();
 
@@ -62,6 +75,17 @@ public class orders extends AppCompatActivity {
 
             }
         });
+        Order = findViewById(R.id.button2);
+        Order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(orders.this, orders_done.class);
+                startActivity(intent);
+                Toast.makeText(orders.this, "Order placed!", LENGTH_LONG).show();
+            }
+        });
+
+
 
     }
 }

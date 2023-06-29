@@ -36,6 +36,7 @@ public class orderlistAdapter extends RecyclerView.Adapter<orderlistAdapter.View
         ordersmodel ordersmodel = items.get(position);
 
         holder.pizzaname.setText(ordersmodel.getPizzaname());
+        holder.pizzaprice.setText(ordersmodel.getPizzaprice());
     }
 
     @Override
@@ -49,8 +50,9 @@ public class orderlistAdapter extends RecyclerView.Adapter<orderlistAdapter.View
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            pizzaprice = itemView.findViewById(R.id.textView13);
-            pizzaname = itemView.findViewById(R.id.textView20);
+            pizzaprice = itemView.findViewById(R.id.textView20);
+            pizzaname = itemView.findViewById(R.id.textView19);
+
         }
     }
 }

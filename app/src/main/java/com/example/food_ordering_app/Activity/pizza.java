@@ -39,7 +39,7 @@ public class pizza extends AppCompatActivity {
 
     @SuppressLint("MissingInflatedId")
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActiviyIndiPizzaBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -51,21 +51,22 @@ public class pizza extends AppCompatActivity {
         binding.textView12.setText(string);
         binding.textView16.setText(string1);
         binding.imageView12.setImageResource(image);
+
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(pizza.this, orders_placed.class);
                 pizza = binding.textView12.getText().toString();
                 price = binding.textView16.getText().toString();
-
-                if(!pizza.isEmpty()){
+                if (!pizza.isEmpty()) {
                     pizzaordermodel pizzaordermodel = new pizzaordermodel(pizza, price);
                     db = FirebaseDatabase.getInstance();
+
                     databaseReference = db.getReference("Pizza orders");
                     databaseReference.child(pizza).setValue(pizzaordermodel).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
-                            Toast.makeText(pizza.this, "Order Placed", Toast.LENGTH_LONG).show();
+                            Toast.makeText(pizza.this, "Item added to cart", Toast.LENGTH_LONG).show();
                         }
                     });
                 }
@@ -74,6 +75,4 @@ public class pizza extends AppCompatActivity {
         });
 
     }
-
-
 }
