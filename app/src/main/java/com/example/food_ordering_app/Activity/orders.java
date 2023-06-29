@@ -20,6 +20,8 @@ import com.example.food_ordering_app.Adapter.orderlistAdapter;
 import com.example.food_ordering_app.Model.ordersmodel;
 import com.example.food_ordering_app.R;
 import com.example.food_ordering_app.databinding.ActivityOrdersBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -43,7 +45,7 @@ public class orders extends AppCompatActivity {
 
     @SuppressLint("MissingInflatedId")
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_orders);
         db = FirebaseDatabase.getInstance();
@@ -59,12 +61,12 @@ public class orders extends AppCompatActivity {
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     ordersmodel ordersmodel = postSnapshot.getValue(ordersmodel.class);
                     list.add(ordersmodel);
                     size = list.size();
-                    n = Integer.toString(size*125);
-                    Total.setText("Order Total : "+n);
+                    n = Integer.toString(size * 125);
+                    Total.setText("Order Total : " + n);
                 }
                 orderlistAdapter.notifyDataSetChanged();
 
@@ -84,8 +86,5 @@ public class orders extends AppCompatActivity {
                 Toast.makeText(orders.this, "Order placed!", LENGTH_LONG).show();
             }
         });
-
-
-
     }
 }
