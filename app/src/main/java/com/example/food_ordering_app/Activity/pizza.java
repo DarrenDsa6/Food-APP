@@ -31,7 +31,6 @@ public class pizza extends AppCompatActivity {
     FirebaseDatabase db;
     ActiviyIndiPizzaBinding binding;
     DatabaseReference databaseReference;
-    StorageReference storageReference;
     String pizza, price;
     private int requestCode;
     private int resultCode;

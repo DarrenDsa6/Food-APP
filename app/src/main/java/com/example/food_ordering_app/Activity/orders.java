@@ -81,9 +81,8 @@ public class orders extends AppCompatActivity {
         Order.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(orders.this, orders_done.class);
+                Intent intent = new Intent(orders.this, customerdetails.class);
                 startActivity(intent);
-                Toast.makeText(orders.this, "Order placed!", LENGTH_LONG).show();
             }
         });
     }
