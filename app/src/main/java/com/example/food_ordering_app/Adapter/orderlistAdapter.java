@@ -1,6 +1,7 @@
 package com.example.food_ordering_app.Adapter;
 
 import android.content.Context;
+import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,6 +38,7 @@ public class orderlistAdapter extends RecyclerView.Adapter<orderlistAdapter.View
 
         holder.pizzaname.setText(ordersmodel.getPizzaname());
         holder.pizzaprice.setText(ordersmodel.getPizzaprice());
+
     }
 
     @Override

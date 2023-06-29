@@ -28,10 +28,10 @@ public class vegpizza extends AppCompatActivity {
         setContentView(R.layout.veg);
         recyclerView = findViewById(R.id.recyclerview2);
         ArrayList<vegmodel> vegmodels = new ArrayList<>();
-        vegmodels.add(new vegmodel(R.drawable.margarita, "Margarita", "125"));
-        vegmodels.add(new vegmodel(R.drawable.peppypaneer, "Peppy Paneer", "125"));
-        vegmodels.add(new vegmodel(R.drawable.farmhouse, "Farmhouse", "125"));
-        vegmodels.add(new vegmodel(R.drawable.mexican_green_wave, "Mexican Green Wave", "125"));
+        vegmodels.add(new vegmodel(R.drawable.margarita, "Margarita", "Rs 125"));
+        vegmodels.add(new vegmodel(R.drawable.peppypaneer, "Peppy Paneer", "Rs 125"));
+        vegmodels.add(new vegmodel(R.drawable.farmhouse, "Farmhouse", "Rs 125"));
+        vegmodels.add(new vegmodel(R.drawable.mexican_green_wave, "Mexican Green Wave", "Rs 125"));
         veglistAdapter veglistAdapter = new veglistAdapter(vegmodels, this);
         recyclerView.setAdapter(veglistAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));

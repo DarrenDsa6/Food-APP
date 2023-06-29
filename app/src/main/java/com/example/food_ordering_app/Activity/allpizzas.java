@@ -1,7 +1,10 @@
 package com.example.food_ordering_app.Activity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +22,7 @@ import java.util.List;
 
 public class allpizzas extends AppCompatActivity {
     RecyclerView recyclerView;
+    ImageView home, cart, support, about;
     SearchView searchView;
     FoodListAdapter foodListAdapter;
     ArrayList<pizzamodel> items;
@@ -53,6 +57,38 @@ public class allpizzas extends AppCompatActivity {
         foodListAdapter = new FoodListAdapter(this, items);
         recyclerView.setAdapter(foodListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        home = (ImageView)findViewById(R.id.imageView8);
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent home = new Intent(allpizzas.this, MainActivity.class);
+                startActivity(home);
+            }
+        });
+        cart = (ImageView)findViewById(R.id.imageView9);
+        cart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cart = new Intent(allpizzas.this, orders.class);
+                startActivity(cart);
+            }
+        });
+        support  = (ImageView)findViewById(R.id.imageView10);
+        support.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent support = new Intent(allpizzas.this, support.class);
+                startActivity(support);
+            }
+        });
+        about  = (ImageView)findViewById(R.id.imageView11);
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent about = new Intent(allpizzas.this, about.class);
+                startActivity(about);
+            }
+        });
     }
 
     private void fileList(String newText) {

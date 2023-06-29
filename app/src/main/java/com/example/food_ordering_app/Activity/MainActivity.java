@@ -4,15 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import com.example.food_ordering_app.R;
 
 public class MainActivity extends AppCompatActivity {
     ImageView veg, nonveg, drinks, home, cart, support, about, searchview;
+    VideoView view;
 
     TextView order;
     @SuppressLint({"MissingInflatedId", "CutPasteId"})
@@ -20,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        view = findViewById(R.id.videoView);
+        Uri uri = Uri.parse("android.resource://"+getPackageName()+"/"+R.raw.vid);
+        view.setVideoURI(uri);
+        view.start();
 
         home = (ImageView)findViewById(R.id.imageView8);
         home.setOnClickListener(new View.OnClickListener() {
@@ -45,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(support);
             }
         });
-        about  = (ImageView)findViewById(R.id.imageView10);
+        about  = (ImageView)findViewById(R.id.imageView11);
         about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,16 +93,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(drinks);
             }
         });
-        searchview = (ImageView) findViewById(R.id.searchview1);
-        searchview.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent search = new Intent(MainActivity.this, allpizzas.class);
-                startActivity(search);
-            }
-        });
-
-
     }
 
 }

@@ -28,10 +28,10 @@ public class nonvegpizza extends AppCompatActivity {
         setContentView(R.layout.nonveg);
         recyclerView = findViewById(R.id.recyclerview3);
         ArrayList<nonvegmodel> nonvegmodel = new ArrayList<>();
-        nonvegmodel.add(new nonvegmodel(R.drawable.pepperbarbequeonion, "Pepper Barbeque onion", "125"));
-        nonvegmodel.add(new nonvegmodel(R.drawable.chickenfiest, "Chicken Fiesta", "125"));
-        nonvegmodel.add(new nonvegmodel(R.drawable.chickenpepper, "Pepperoni chicken", "125"));
-        nonvegmodel.add(new nonvegmodel(R.drawable.nonvegsupreme, "Non Veg Supreme", "125"));
+        nonvegmodel.add(new nonvegmodel(R.drawable.pepperbarbequeonion, "Pepper Barbeque onion", "Rs 125"));
+        nonvegmodel.add(new nonvegmodel(R.drawable.chickenfiest, "Chicken Fiesta", "Rs 125"));
+        nonvegmodel.add(new nonvegmodel(R.drawable.chickenpepper, "Pepperoni chicken", "Rs 125"));
+        nonvegmodel.add(new nonvegmodel(R.drawable.nonvegsupreme, "Non Veg Supreme", "Rs 125"));
         nonveglistAdapter nonveglistAdapter = new nonveglistAdapter(nonvegmodel, this);
         recyclerView.setAdapter(nonveglistAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
