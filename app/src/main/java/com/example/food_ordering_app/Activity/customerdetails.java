@@ -2,6 +2,7 @@ package com.example.food_ordering_app.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -41,18 +42,23 @@ public class customerdetails extends AppCompatActivity {
                 phno = ph.getText().toString();
                 email = em.getText().toString();
                 deladdress = add.getText().toString();
-                Intent intent = new Intent(customerdetails.this, orderloading.class);
-                if(!firstname.isEmpty()){
-                    customerdetailsmodel customerdetailsmodel = new customerdetailsmodel(firstname, lastname, phno, email, deladdress);
-                    databaseReference = FirebaseDatabase.getInstance().getReference("User");
-                    databaseReference.child(firstname).setValue(customerdetailsmodel).addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            Toast.makeText(customerdetails.this, "Order Placed", Toast.LENGTH_LONG);
-                        }
-                    });
+                if(TextUtils.isEmpty(firstname) && TextUtils.isEmpty(lastname) && TextUtils.isEmpty(phno) && TextUtils.isEmpty(email) && TextUtils.isEmpty(deladdress)){
+                    Toast.makeText(customerdetails.this, "Please enter the details", Toast.LENGTH_LONG).show();
                 }
-                startActivity(intent);
+                else {
+                    Intent intent = new Intent(customerdetails.this, orderloading.class);
+                    if (!firstname.isEmpty()) {
+                        customerdetailsmodel customerdetailsmodel = new customerdetailsmodel(firstname, lastname, phno, email, deladdress);
+                        databaseReference = FirebaseDatabase.getInstance().getReference("User");
+                        databaseReference.child(firstname).setValue(customerdetailsmodel).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                Toast.makeText(customerdetails.this, "Order Placed", Toast.LENGTH_LONG);
+                            }
+                        });
+                    }
+                    startActivity(intent);
+                }
 
 
             }
