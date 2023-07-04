@@ -12,17 +12,25 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.food_ordering_app.Model.customerdetailsmodel;
+import com.example.food_ordering_app.Model.ordersmodel;
+import com.example.food_ordering_app.Model.pizzamodel;
 import com.example.food_ordering_app.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class customerdetails extends AppCompatActivity {
     String firstname, lastname, phno, email, deladdress;
     Button place;
     EditText fname, lname, add, ph, em;
     DatabaseReference databaseReference;
+    ArrayList<ordersmodel> orders = new ArrayList<>();
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -34,6 +42,20 @@ public class customerdetails extends AppCompatActivity {
         em = findViewById(R.id.editTextText4);
 
         place = findViewById(R.id.button5);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Pizza orders");
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    ordersmodel ordersmodel = postSnapshot.getValue(ordersmodel.class);
+                    orders.add(ordersmodel);
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
         place.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +70,7 @@ public class customerdetails extends AppCompatActivity {
                 else {
                     Intent intent = new Intent(customerdetails.this, orderloading.class);
                     if (!firstname.isEmpty()) {
-                        customerdetailsmodel customerdetailsmodel = new customerdetailsmodel(firstname, lastname, phno, email, deladdress);
+                        customerdetailsmodel customerdetailsmodel = new customerdetailsmodel(firstname, lastname, phno, email, deladdress, orders);
                         databaseReference = FirebaseDatabase.getInstance().getReference("User");
                         databaseReference.child(firstname).setValue(customerdetailsmodel).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
