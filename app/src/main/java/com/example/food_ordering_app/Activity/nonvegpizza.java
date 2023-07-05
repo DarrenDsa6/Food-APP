@@ -28,6 +28,9 @@ public class nonvegpizza extends AppCompatActivity {
         setContentView(R.layout.nonveg);
         recyclerView = findViewById(R.id.recyclerview3);
         ArrayList<nonvegmodel> nonvegmodel = new ArrayList<>();
+        nonvegmodel.add(new nonvegmodel(R.drawable.new_chicken_dominator, "Chicken Dominator", "125"));
+        nonvegmodel.add(new nonvegmodel(R.drawable.blazingchicken, "Blazing Chicken Paprika", "125"));
+        nonvegmodel.add(new nonvegmodel(R.drawable.fierysausage, "Fiery Sausage & paprika", "125"));
         nonvegmodel.add(new nonvegmodel(R.drawable.pepperbarbequeonion, "Pepper Barbeque onion", "Rs 125"));
         nonvegmodel.add(new nonvegmodel(R.drawable.chickenfiest, "Chicken Fiesta", "Rs 125"));
         nonvegmodel.add(new nonvegmodel(R.drawable.chickenpepper, "Pepperoni chicken", "Rs 125"));

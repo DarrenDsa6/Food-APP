@@ -13,7 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.food_ordering_app.Adapter.FoodListAdapter;
+import com.example.food_ordering_app.Model.nonvegmodel;
 import com.example.food_ordering_app.Model.pizzamodel;
+import com.example.food_ordering_app.Model.vegmodel;
 import com.example.food_ordering_app.R;
 
 import java.util.ArrayList;
@@ -46,6 +48,12 @@ public class allpizzas extends AppCompatActivity {
         });
         recyclerView = findViewById(R.id.recyclerview);
         items = new ArrayList<>();
+        items.add(new pizzamodel(R.drawable.new_chicken_dominator, "Chicken Dominator", "125"));
+        items.add(new pizzamodel(R.drawable.blazingchicken, "Blazing Chicken Paprika", "125"));
+        items.add(new pizzamodel(R.drawable.fierysausage, "Fiery Sausage & paprika", "125"));
+        items.add(new pizzamodel(R.drawable.jalapeno, "Fiery Jalapeno & Paprika", "125"));
+        items.add(new pizzamodel(R.drawable.blazingonion, "Blazing Onion & paprika", "125"));
+        items.add(new pizzamodel(R.drawable.cheesencorn, "Cheese n Corn", "125"));
         items.add(new pizzamodel(R.drawable.margarita, "Margarita", "Rs 125"));
         items.add(new pizzamodel(R.drawable.peppypaneer, "Peppy Paneer", "Rs 125"));
         items.add(new pizzamodel(R.drawable.farmhouse, "Farmhouse", "Rs 125"));
