@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="10dp"
-    android:background="#f3f3f3"
-    app:cardBackgroundColor="#B4B1B1"
+    android:background="#263B55"
+    app:cardBackgroundColor="#263B55"
     app:cardCornerRadius="30dp"
     app:cardElevation="10dp">
 
@@ -37,13 +37,15 @@
                 android:layout_width="150dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
-                android:layout_weight="1"
+                android:layout_marginRight="5dp"
 
+                android:layout_weight="1"
+                android:background="#7792AE"
                 android:gravity="center"
                 android:paddingRight="10dp"
                 android:text="Pepsi"
                 android:textAlignment="center"
-                android:textColor="@color/black"
+                android:textColor="#000000"
                 android:textStyle="bold" />
 
             <TextView
@@ -52,9 +54,10 @@
                 android:layout_height="30dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
+                android:background="#7792AE"
                 android:paddingLeft="10dp"
                 android:text="45 Rs"
-                android:textColor="@color/green"
+                android:textColor="#000000"
                 android:textStyle="bold" />
         </LinearLayout>
 

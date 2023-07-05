@@ -9,6 +9,7 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#263B55"
         android:orientation="vertical">
 
         <TextView
@@ -26,7 +27,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/orderview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:background="#7792AE">
 
         </androidx.recyclerview.widget.RecyclerView>
 
@@ -35,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
+            android:background="#7792AE"
             android:text="Order Total : "
             android:textSize="24sp"
             android:textStyle="bold" />

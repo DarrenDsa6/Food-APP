@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp">
+    android:layout_margin="20dp"
+    android:background="#263B55">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,6 +15,8 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="151dp"
+            android:layout_marginTop="250dp"
+            android:background="#7792AE"
             app:cardBackgroundColor="#D2CFCF"
             app:cardCornerRadius="30dp"
             tools:ignore="ExtraText">
@@ -24,9 +27,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="10dp"
+                android:background="#222967"
                 android:gravity="center"
                 android:text="YOUR ORDER HAS BEEN PLACED!"
-                android:textColor="#656666"
+                android:textColor="#FFFFFF"
                 android:textSize="30dp"
                 android:textStyle="bold|italic" />
 

@@ -27,7 +27,7 @@ import java.util.ArrayList;
 
 public class customerdetails extends AppCompatActivity {
     String firstname, lastname, phno, email, deladdress;
-    Button place;
+    Button Cod,gpay,cancel;
     EditText fname, lname, add, ph, em;
     DatabaseReference databaseReference;
     ArrayList<ordersmodel> orders = new ArrayList<>();
@@ -40,8 +40,10 @@ public class customerdetails extends AppCompatActivity {
         ph = findViewById(R.id.editTextText5);
         add = findViewById(R.id.editTextText3);
         em = findViewById(R.id.editTextText4);
+        gpay=findViewById(R.id.button10);
+        cancel=findViewById(R.id.button9);
 
-        place = findViewById(R.id.button5);
+        Cod = findViewById(R.id.button5);
         databaseReference = FirebaseDatabase.getInstance().getReference("Pizza orders");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -56,7 +58,7 @@ public class customerdetails extends AppCompatActivity {
 
             }
         });
-        place.setOnClickListener(new View.OnClickListener() {
+        Cod.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 firstname = fname.getText().toString();
@@ -85,5 +87,34 @@ public class customerdetails extends AppCompatActivity {
 
             }
         });
+        cancel.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                try{
+                Intent intent = new Intent(customerdetails.this,MainActivity.class);
+                Toast.makeText(customerdetails.this, "Order Cancelled", Toast.LENGTH_LONG).show();
+                startActivity(intent);
+            }catch (Exception e) {
+                }
+            }
+
+
+        });
+        gpay.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                firstname = fname.getText().toString();
+                lastname = lname.getText().toString();
+                phno = ph.getText().toString();
+                email = em.getText().toString();
+                deladdress = add.getText().toString();
+                if (TextUtils.isEmpty(firstname) && TextUtils.isEmpty(lastname) && TextUtils.isEmpty(phno) && TextUtils.isEmpty(email) && TextUtils.isEmpty(deladdress)) {
+                    Toast.makeText(customerdetails.this, "Please enter the details", Toast.LENGTH_LONG).show();
+                } else {
+                    Intent intent1 = new Intent(customerdetails.this,gpay.class);
+                    startActivity(intent1);
+
+                }
+            }
+        });
+
     }
 }

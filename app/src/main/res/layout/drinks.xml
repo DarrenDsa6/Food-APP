@@ -9,7 +9,10 @@
         android:id="@+id/recyclerview4"
         android:layout_width="409dp"
         android:layout_height="660dp"
-        tools:ignore="MissingConstraints" />
+        android:background="#7792AE"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-8dp"
+        tools:layout_editor_absoluteY="0dp" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
