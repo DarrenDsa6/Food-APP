@@ -32,6 +32,10 @@ public class vegpizza extends AppCompatActivity {
         vegmodels.add(new vegmodel(R.drawable.peppypaneer, "Peppy Paneer", "Rs 125"));
         vegmodels.add(new vegmodel(R.drawable.farmhouse, "Farmhouse", "Rs 125"));
         vegmodels.add(new vegmodel(R.drawable.mexican_green_wave, "Mexican Green Wave", "Rs 125"));
+        vegmodels.add(new vegmodel(R.drawable.jalapeno, "Fiery Jalapeno & Paprika", "125"));
+        vegmodels.add(new vegmodel(R.drawable.blazingonion, "Blazing Onion & paprika", "125"));
+        vegmodels.add(new vegmodel(R.drawable.cheesencorn, "Cheese n Corn", "125"));
+
         veglistAdapter veglistAdapter = new veglistAdapter(vegmodels, this);
         recyclerView.setAdapter(veglistAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
